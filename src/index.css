@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Cyber Navy Palette */
+  --bg-dark: #0a192f;
+  /* Deep Navy */
+  --bg-darker: #020c1b;
+  /* Darker Navy (almost black) */
+
+  --secondary-bg: #112240;
+  /* Light Navy for cards */
+
+  --accent-primary: #FF4D00;
+  /* Samantha Reference Orange */
+  --accent-secondary: #FF8533;
+  /* Lighter Orange for gradients/glows */
+
+  --text-primary: #e6f1ff;
+  /* Lightest Slate */
+  --text-secondary: #8892b0;
+  /* Slate */
+
+  --font-mono: 'Fira Code', monospace;
+  --font-sans: 'Space Grotesk', sans-serif;
+  /* Tech-focused font */
+
+  --glass-bg: rgba(10, 25, 47, 0.85);
+  --glass-border: rgba(100, 255, 218, 0.1);
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+  background: var(--bg-dark);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: none;
+  /* Keep custom cursor */
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* Utility Classes */
+.text-accent {
+  color: var(--accent-primary);
+}
+
+.bg-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero Section Base Styles */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-content {
+  text-align: left;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+
+  /* Global Adjustments */
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  section {
+    padding: 4rem 1rem !important;
+    /* Override inline section padding */
+  }
+
+  /* Hero Section Mobile */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    text-align: center;
+    order: 2;
+    /* Image on top is standard for profiles, but let's see. If order:1 image, order:2 text. Default is Text then Image. Let's try Image First? No, Text first is fine, or Image first.*/
+    /* Let's keep Text first (default) for now, but center it. */
+  }
+
+  .hero-title {
+    font-size: 3rem !important;
+    /* Force override if inline style lingers, but I removed it */
+  }
+
+  /* Adjust Image Rings for Mobile */
+  .hero-image-container>div {
+    /* Scale down further to prevent navbar overlap */
+    transform: scale(0.45);
+    margin-top: -2rem;
+    /* Pull it up slightly if needed, or push down. User said it hits navbar, so maybe padding issue. Let's just scale. */
+  }
+
+  /* Navbar Adjustments */
+  nav {
+    padding: 0.8rem !important;
+  }
+
+  nav .logo {
+    font-size: 1.1rem !important;
+  }
+
+  nav ul {
+    gap: 0.8rem !important;
+  }
+
+  nav a {
+    font-size: 0.85rem !important;
+  }
+
+  /* Hero Mobile Override */
+  .hero-section {
+    flex-direction: column !important;
+    padding-top: 6rem !important; /* increased padding for navbar */
+    height: auto !important; /* allow content to dictate height */
+    padding-bottom: 4rem; /* space for scroll indicator */
+  }
+
+  /* Fix Scroll Indicator Overlap on Mobile */
+  .scroll-indicator {
+    position: relative !important;
+    bottom: auto !important;
+    left: 0 !important;
+    /* Reset left positioning */
+    transform: none !important;
+    margin: 2rem auto !important;
+    /* Center horizontally */
+    width: fit-content;
+  }
+}
