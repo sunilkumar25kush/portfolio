@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaPython, FaGitAlt } from 'react-icons/fa';
 import { SiJavascript, SiFigma, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
 
+// Updated Skills Data - All Skills by Category
 const skillsData = {
     'Frontend': ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'DOM Manipulation', 'Async/Await'],
     'Backend': ['Node.js', 'Express.js', 'AI Prompt Engineering'],

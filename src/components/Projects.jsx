@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
+// Updated Projects with Real Data
 const projects = [
     {
         title: "Notes Management Application",
