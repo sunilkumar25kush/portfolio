@@ -3,22 +3,36 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const projects = [
     {
-        title: "Project Alpha",
-        description: "A high-performance e-commerce dashboard with real-time analytics.",
-        tags: ["React", "D3.js", "Node.js"],
-        image: "/assets/project_dashboard.png"
+        title: "Notes Management Application",
+        description: "Built a full-stack notes application with Node.js backend and MongoDB database for secure data persistence. Implemented CRUD operations with real-time note management.",
+        tags: ["Node.js", "Express.js", "MongoDB"],
+        image: "/assets/project_notes.png",
+        demoLink: "https://note-project-clrz.vercel.app/",
+        date: "March 2026"
     },
     {
-        title: "Portfolio v1",
-        description: "My first personal website built with vanilla HTML/CSS and JS.",
-        tags: ["HTML", "CSS", "JavaScript"],
-        image: "/assets/project_portfolio.png"
+        title: "AI Chatbot Application",
+        description: "Developed an interactive AI chatbot application powered by Google Gemini API for real-time conversational responses.",
+        tags: ["Node.js", "Express.js", "Gemini API"],
+        image: "/assets/project_chatbot.png",
+        demoLink: "https://phase-5-self.vercel.app/",
+        date: "April 2026"
     },
     {
-        title: "Task Master",
-        description: "Productivity application with drag-and-drop Kanban boards.",
-        tags: ["Vue.js", "Firebase", "Tailwind"],
-        image: "/assets/project_task.png"
+        title: "AI Content Generator",
+        description: "Built an AI-powered content generator using Gemini API, enabling dynamic content creation from user prompts. Hands-on experience in prompt engineering and API integration.",
+        tags: ["HTML5", "CSS3", "JavaScript", "Gemini API"],
+        image: "/assets/project_generator.png",
+        demoLink: "https://ai-content-generator-rho-smoky.vercel.app/",
+        date: "September 2025"
+    },
+    {
+        title: "Weather App",
+        description: "Developed a weather app to practice API integration, async/await, and JavaScript state handling. Displays live weather information with responsive UI design.",
+        tags: ["HTML5", "CSS3", "JavaScript", "OpenWeatherMap API"],
+        image: "/assets/project_weather.png",
+        demoLink: "https://wather-app-topaz.vercel.app/",
+        date: "September 2025"
     }
 ];
 
@@ -115,13 +129,22 @@ const Projects = () => {
                             </div>
 
                             <div style={{ padding: '2rem' }}>
-                                <h3 style={{
-                                    fontSize: '1.5rem',
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '0.5rem' }}>
+                                    <h3 style={{
+                                        fontSize: '1.5rem',
+                                        color: 'var(--text-primary)'
+                                    }}>
+                                        {project.title}
+                                    </h3>
+                                </div>
+                                <p style={{
+                                    color: 'var(--text-secondary)',
+                                    fontSize: '0.8rem',
                                     marginBottom: '1rem',
-                                    color: 'var(--text-primary)'
+                                    fontFamily: 'var(--font-mono)'
                                 }}>
-                                    {project.title}
-                                </h3>
+                                    {project.date}
+                                </p>
                                 <p style={{
                                     color: 'var(--text-secondary)',
                                     marginBottom: '1.5rem',
@@ -147,14 +170,9 @@ const Projects = () => {
 
                                 <div style={{ display: 'flex', gap: '1rem' }}>
                                     <motion.a
-                                        href="#"
-                                        whileHover={{ color: 'var(--accent-primary)' }}
-                                        style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}
-                                    >
-                                        <FaGithub /> Code
-                                    </motion.a>
-                                    <motion.a
-                                        href="#"
+                                        href={project.demoLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         whileHover={{ color: 'var(--accent-primary)' }}
                                         style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}
                                     >

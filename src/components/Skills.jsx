@@ -2,6 +2,14 @@ import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaPython, FaGitAlt } from 'react-icons/fa';
 import { SiJavascript, SiFigma, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
 
+const skillsData = {
+    'Frontend': ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'DOM Manipulation', 'Async/Await'],
+    'Backend': ['Node.js', 'Express.js', 'AI Prompt Engineering'],
+    'AI Tools': ['Claude', 'ChatGPT', 'Cursor'],
+    'Dev Tools': ['GitHub', 'Git', 'VS Code', 'Vercel', 'Netlify'],
+    'Soft Skills': ['Problem Solving', 'Self-Learning', 'Adaptability', 'Written Communication', 'Time Management']
+};
+
 const skills = [
     { name: 'React', icon: <FaReact />, color: '#61DAFB' },
     { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
@@ -56,6 +64,46 @@ const Skills = () => {
                 >
                     Skills
                 </motion.h2>
+
+                {/* Detailed Skills by Category */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                        gap: '2rem',
+                        marginBottom: '4rem'
+                    }}
+                >
+                    {Object.entries(skillsData).map(([category, skills]) => (
+                        <motion.div
+                            key={category}
+                            whileHover={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
+                            style={{
+                                padding: '1.5rem',
+                                borderRadius: '12px',
+                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                background: 'rgba(255, 255, 255, 0.02)'
+                            }}
+                        >
+                            <h3 style={{
+                                color: 'var(--accent-primary)',
+                                marginBottom: '1rem',
+                                fontSize: '1.2rem',
+                                fontFamily: 'var(--font-mono)'
+                            }}>
+                                {category}
+                            </h3>
+                            <ul style={{ listStyle: 'none', color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+                                {skills.map(skill => (
+                                    <li key={skill} style={{ fontSize: '0.95rem' }}>• {skill}</li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    ))}
+                </motion.div>
 
                 <motion.div
                     variants={containerVariants}
