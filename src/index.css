@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Fira+Code&display=swap');
 
 :root {
   /* Cyber Navy Palette */
@@ -22,8 +21,7 @@
   /* Slate */
 
   --font-mono: 'Fira Code', monospace;
-  --font-sans: 'Space Grotesk', sans-serif;
-  /* Tech-focused font */
+  --font-sans: 'Open Sans', sans-serif;
 
   --glass-bg: rgba(10, 25, 47, 0.85);
   --glass-border: rgba(100, 255, 218, 0.1);
