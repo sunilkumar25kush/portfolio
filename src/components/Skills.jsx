@@ -78,7 +78,7 @@ const Skills = () => {
                         marginBottom: '4rem'
                     }}
                 >
-                    {Object.entries(skillsData).map(([category, skills]) => (
+                    {Object.entries(skillsData).map(([category, categorySkills]) => (
                         <motion.div
                             key={category}
                             whileHover={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
@@ -98,7 +98,7 @@ const Skills = () => {
                                 {category}
                             </h3>
                             <ul style={{ listStyle: 'none', color: 'var(--text-secondary)', lineHeight: '1.8' }}>
-                                {skills.map(skill => (
+                                {categorySkills.map(skill => (
                                     <li key={skill} style={{ fontSize: '0.95rem' }}>• {skill}</li>
                                 ))}
                             </ul>
