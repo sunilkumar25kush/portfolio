@@ -4,7 +4,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/f
 /**
  * Hero Component - "Samantha" Style Replica with Rotating Ring Animation
  */
-const Hero = ({ profile = { name: "Sunil Kumar", role: "Frontend Developer", bio: [] } }) => {
+const Hero = ({ profile = { name: "Sunil Kumar", role: "Aspiring MERN Stack Developer", bio: [] } }) => {
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -84,7 +84,7 @@ const Hero = ({ profile = { name: "Sunil Kumar", role: "Frontend Developer", bio
                         marginBottom: '2.5rem',
                         lineHeight: 1.8
                     }}>
-                        I am an aspiring frontend developer with a passion for building beautiful and functional web applications. I love learning new technologies and solving complex problems.
+                        Backend Developer with experience in Node.js, Express.js, MongoDB, and AI integrations. I have built projects including AI chatbots, content generators, and REST APIs, and I am currently expanding my skills in React and full-stack development
                     </motion.p>
 
                     {/* Button & Socials */}
